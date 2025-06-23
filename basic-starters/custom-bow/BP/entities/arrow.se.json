@@ -1,0 +1,67 @@
+{
+  "format_version": "1.21.40",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "custom_bow:arrow",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "runtime_identifier": "arrow"
+    },
+
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava", "subject": "self", "operator": "==", "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 1,
+              "knockback": true,
+              "destroy_on_hit": false,
+              "max_critical_damage": 1,
+              "min_critical_damage": 0,
+              "power_multiplier": 0.97
+            },
+            "stick_in_ground": {
+              "shake_time": 0.35
+            }
+          },
+          "hit_sound": "bow.hit",
+          "power": 1.0,
+          "gravity": 0.05,
+          "uncertainty_base": 1,
+          "uncertainty_multiplier": 0,
+          "anchor": 1,
+          "should_bounce": true,
+          "offset": [ 0, -0.1, 0 ]
+        },
+      "minecraft:physics": {
+      },
+      "minecraft:dimension_bound": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 7,
+          "use_motion_prediction_hints": true
+        }
+      }
+    }
+  }
+}

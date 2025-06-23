@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ES6",
+        "moduleResolution": "Node",
+        "esModuleInterop": false,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "rootDir": "./scripts",
+        "outDir": "./BP/scripts"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.custom_bow.bow": {
+            "states": {
+                "default": {
+                    "animations": [
+                        "first_person"
+                    ],
+                    "transitions": [
+                        {
+                            "charge": "q.is_using_item && v.has_arrow"
+                        }
+                    ]
+                },
+                "charge": {
+                    "animations": [
+                        "charge"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!q.is_using_item || !v.has_arrow"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

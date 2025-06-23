@@ -1,0 +1,45 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.custom_bow.player.bow": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						"v.is_first_person ? 0 : (q.head_x_rotation(0) + -72.5) + (v.tcos0 * 0.5)",
+						"v.is_first_person ? 0 : q.head_y_rotation(0) - q.body_y_rotation(0)",
+						0
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						"v.is_first_person ? 0 : (q.head_x_rotation(0) + -90)- v.tcos0",
+						"v.is_first_person ? 0 : 25 + (q.head_y_rotation(0) - q.body_y_rotation(0))",
+						0
+					],
+					"position": ["v.is_first_person ? 0 : -1", 0, "v.is_first_person ? 0 : -1"]
+				}
+			}
+		},
+		"animation.custom_bow.player.bow.left_item": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						"v.is_first_person ? 0 : (q.head_x_rotation(0) + -72.5) + (v.tcos0 * 0.5)",
+						"v.is_first_person ? 0 : q.head_y_rotation(0) - q.body_y_rotation(0)",
+						0
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						"v.is_first_person ? 0 : (q.head_x_rotation(0) + -72.5)- (v.tcos0 * 0.5)",
+						"v.is_first_person ? 0 : 25 + (q.head_y_rotation(0) - q.body_y_rotation(0))",
+						0
+					],
+					"position": ["v.is_first_person ? 0 : -1", 0, "v.is_first_person ? 0 : -1"]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,7 @@
+pack.name=Custom Bow Template
+pack.description=A custom bow template pack! Made by Alien Edds
+
+item.custom_bow:template_bow=Template Bow
+
+entity.custom_bow:arrow.name=Arrow
+%entity.custom_bow:arrow.name=Arrow

@@ -1,0 +1,36 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.custom_bow.bow.first_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [95.58312, 59.33208, -65.68002],
+					"position": [-2, 28, 4.5],
+					"scale": 1.7
+				}
+			}
+		},
+		"animation.custom_bow.bow.third_person_hold": {
+			"loop": true,
+			"bones": {
+				"root_item": {
+					"rotation": [130, 0, 0],
+					"position": [2, 28.5, 5],
+					"scale": 1.7
+				}
+			}
+		},
+		"animation.custom_bow.bow.charge": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 70.9167,
+			"bones": {
+				"root_item": {
+					"rotation": [149.81994, 68.13162, -26.56709],
+					"position": [-3.5, "32.5 + (v.shake / 40)", 0.5],
+					"scale": 2.4
+				}
+			}
+		}
+	}
+}

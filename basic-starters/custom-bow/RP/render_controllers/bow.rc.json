@@ -1,0 +1,26 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.custom_bow.bow": {
+            "geometry": "Geometry.default",
+            "arrays": {
+                "textures": {
+                    "Array.texture": [
+                        "Texture.pull0",
+                        "Texture.pull1",
+                        "Texture.pull2"
+                    ]
+                }
+            },
+            "materials": [
+                {
+                    "*": "variable.is_enchanted ? material.enchanted : material.default"
+                }
+            ],
+            "textures": [
+                "(v.has_arrow && q.is_using_item) ? Array.texture[Math.clamp(Math.floor(q.item_in_use_duration / 200 > 0.7 ? q.item_in_use_duration / 200 : 0), 0, 2)] : Texture.standby",
+                "Texture.enchanted"
+            ]
+        }
+    }
+}

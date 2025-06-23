@@ -1,0 +1,50 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "custom_bow:template_bow",
+            "geometry": {
+                "default": "geometry.custom_bow.bow"
+            },
+            "materials": {
+                "default": "entity_alphatest",
+                "enchanted": "entity_alphatest_glint"
+            },
+            "textures": {
+                "standby": "textures/custom_bow/items/bow/default/standby",
+                "pull0": "textures/custom_bow/items/bow/default/pulling_0",
+                "pull1": "textures/custom_bow/items/bow/default/pulling_1",
+                "pull2": "textures/custom_bow/items/bow/default/pulling_2",
+                "enchanted": "textures/misc/enchanted_item_glint"
+            },
+            "animations": {
+                "first_person": "animation.custom_bow.bow.first_person_hold",
+                "third_person": "animation.custom_bow.bow.third_person_hold",
+                "charge": "animation.custom_bow.bow.charge",
+                "controller": "controller.animation.custom_bow.bow"
+            },
+            "scripts": {
+                "initialize": ["v.has_arrow = 0.0;", "v.item_name = 'minecraft:arrow';", "v.shake = 0.0;", "v.shake_direction = 0.0;"],
+                "pre_animation": [
+                    "v.has_arrow = 0.0;",
+                    "t.val = 0; t.i = 0; loop(27, {t.val = q.is_item_name_any('slot.inventory', t.i, v.item_name); t.val ? {v.has_arrow = 1.0; break;}; t.i = t.i+1;});",
+                    "t.val = 0; t.i = 0; loop(9, {t.val = q.is_item_name_any('slot.hotbar', t.i, v.item_name); t.val ? {v.has_arrow = 1.0; break;}; t.i = t.i+1;});",
+                    "q.is_item_name_any('slot.weapon.offhand', 0, v.item_name) ? {v.has_arrow = 1.0;} : {v.has_arrow = v.has_arrow;};",
+                    "v.shake > 10 ? {v.shake_direction = -1.0;} : v.shake < -10 ? {v.shake_direction = 1.0;} : {v.shake_direction = v.shake_direction;};",
+                    "(q.is_using_item && (q.item_in_use_duration / 200) > 0.66) ? {v.shake = v.shake + v.shake_direction;} : {v.shake = 0.0;v.shake_direction = -1.0;};"
+                ],
+                "animate": [
+                    {
+                        "controller": "c.is_first_person"
+                    },
+                    {
+                        "third_person": "!c.is_first_person"
+                    }
+                ]
+            },
+            "render_controllers": [
+                "controller.render.custom_bow.bow"
+            ]
+        }
+    }
+}
