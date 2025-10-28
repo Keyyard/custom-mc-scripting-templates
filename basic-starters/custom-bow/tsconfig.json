@@ -1,16 +1,31 @@
-{
-    "compilerOptions": {
-        "target": "ESNext",
-        "module": "ES6",
-        "moduleResolution": "Node",
-        "esModuleInterop": false,
-        "forceConsistentCasingInFileNames": true,
-        "strict": true,
-        "skipLibCheck": true,
-        "rootDir": "./scripts",
-        "outDir": "./BP/scripts"
+{ 
+    "compilerOptions":{ 
+       "target":"es6",
+       "moduleResolution":"Node",
+       "module": "ES2020",
+       "declaration":false,
+       "noLib":false,
+       "emitDecoratorMetadata":true,
+       "experimentalDecorators":true,
+       "sourceMap":true,
+       "pretty":true,
+       "forceConsistentCasingInFileNames": true,
+       "strict": true,
+       "allowUnreachableCode":true,
+       "allowUnusedLabels":true,
+       "noImplicitAny":true,
+       "noImplicitReturns":false,
+       "noImplicitUseStrict":false,
+       "outDir":"lib",
+       "rootDir": ".",
+       "baseUrl":"BP/",
+       "listFiles":false,
+       "noEmitHelpers":true,
+       "skipLibCheck": true
     },
-    "exclude": [
-        "node_modules"
-    ]
-}
+    "include":[ 
+       "scripts/**/*"
+    ],
+    "exclude": ["lib", "dist", "node_modules"],
+    "compileOnSave":false
+ }
